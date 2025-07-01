@@ -253,19 +253,50 @@ modData.forEach(m => {
     <div class="section">
         <h2>加入我们</h2> 
         <div class="contact">
-            进入QQ群获取服务器地址：<a href="https://qm.qq.com/q/QIejf7dloS" target="_blank" class="highlight">118739233</a> 
+            进入QQ群获取服务器地址： <a href="https://qm.qq.com/q/QIejf7dloS" target="_blank" class="highlight">118739233</a> 
         </div>
         <div class="download">
-            客户端下载地址(点击跳转)：<a href="https://pan.quark.cn/s/7fddef611ce6?pwd=C3Hr" target="_blank" class="highlight">夸克网盘</a> <a href="https://pan.baidu.com/s/1Ykbsfn-DmmkLUhWJjFhnvg?pwd=diem" target="_blank" class="highlight">百度网盘</a>
+            客户端下载地址(点击跳转)：
+            <a href="https://pan.quark.cn/s/7fddef611ce6?pwd=C3Hr" target="_blank" class="highlight">夸克网盘</a>
+            <a href="https://pan.baidu.com/s/1Ykbsfn-DmmkLUhWJjFhnvg?pwd=diem" target="_blank" class="highlight">百度网盘</a>
         </div>
         <p style="margin-top:1em;">
-            <span class="mystery">你准备好，成为故事的一部分了吗？</span>
+            <span style="font-size:0.98em;color:#ebebeb;">
+    [ 注意 ] 游玩需先安装 Java 21：
+    <a href="https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe" target="_blank" style="color:#00bfff;text-decoration:underline;">官网下载地址</a>
+</span><br><br>
+            <span class="mystery">你准备好，成为故事的一部分了吗？</span><br>
         </p>
     </div>
     <div class="footer-support" style="text-align:center; margin-bottom:1em;">
-        使用支付宝扫码，给服主赞助一杯咖啡吧！<br>
-        <img src="8c0025f20df59b52389d12a09080126.jpg" alt="赞助二维码" style="margin-top:0.5em;max-width:180px;width:60vw;box-shadow:0 0 8px #0006;border-radius:8px;">
+    😊扫码一下！给服主买一杯咖啡吧！<br>
+    <div style="margin:0.7em 0 0.3em 0;">
+        <button id="pay-wx-btn" style="padding:0.3em 1.2em;border-radius:6px;border:none;background:#00c800;color:#fff;cursor:pointer;margin-right:0.5em;">微信</button>
+        <button id="pay-zfb-btn" style="padding:0.3em 1.2em;border-radius:6px;border:none;background:#00bfff;color:#fff;cursor:pointer;">支付宝</button>
     </div>
+    <img id="pay-qrcode" src="20250701113108.jpg" alt="赞助二维码" style="margin-top:0.5em;max-width:180px;width:60vw;box-shadow:0 0 8px #0006;border-radius:8px;">
+</div>
+<script>
+const wxBtn = document.getElementById('pay-wx-btn');
+const zfbBtn = document.getElementById('pay-zfb-btn');
+const qrImg = document.getElementById('pay-qrcode');
+
+// 默认显示微信二维码
+qrImg.src = "20250701113108.jpg";
+wxBtn.style.opacity = "1";
+zfbBtn.style.opacity = "0.6";
+
+wxBtn.onclick = function() {
+    qrImg.src = "20250701113108.jpg";
+    wxBtn.style.opacity = "1";
+    zfbBtn.style.opacity = "0.6";
+};
+zfbBtn.onclick = function() {
+    qrImg.src = "8c0025f20df59b52389d12a09080126.jpg";
+    wxBtn.style.opacity = "0.6";
+    zfbBtn.style.opacity = "1";
+};
+</script>
     <div class="footer">
         &copy; 2025 Carpe Diem 服务器 | 灵感致敬 <a href="https://scp-wiki-cn.wikidot.com/" target="_blank">SCP基金会</a> | 本页仅供玩家交流与学习
     </div>
