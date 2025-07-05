@@ -78,13 +78,14 @@
         }
         
         .philosophical-title {
-            font-size: 1.4em;
-            line-height: 1.8;
+            font-size: 1.3em;
+            line-height: 1.7;
             color: #d4d4d4;
             font-style: italic;
             margin-bottom: 2em;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
             text-shadow: 0 0 10px rgba(212, 212, 212, 0.3);
+            font-weight: 300;
         }
         
         .poem-section {
@@ -116,13 +117,14 @@
         }
         
         .poem-content {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.05em;
+            line-height: 1.7;
             color: #e0e0e0;
             font-style: italic;
             margin-bottom: 1.5em;
             white-space: pre-line;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.02em;
+            font-weight: 300;
         }
         
         .poem-highlight {
@@ -181,15 +183,16 @@
             color: #fff;
             padding: 0.8em 1.2em;
             font-family: 'Courier Prime', monospace;
-            font-size: 1.1em;
-            letter-spacing: 0.2em;
+            font-size: 1.05em;
+            letter-spacing: 0.15em;
             text-align: center;
-            width: 120px;
+            width: 130px;
             transition: all 0.3s ease;
             cursor: pointer;
             pointer-events: none; /* 禁用直接输入 */
             text-decoration: underline;
             text-underline-offset: 8px;
+            font-weight: 500;
         }
         
         .password-input:focus {
@@ -212,12 +215,12 @@
             color: #fff;
             padding: 1em;
             font-family: 'Courier Prime', monospace;
-            font-size: 1.2em;
-            font-weight: bold;
+            font-size: 1.15em;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             border-radius: 8px;
-            min-height: 50px;
+            min-height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -275,11 +278,11 @@
             color: #fff;
             padding: 1em 2em;
             font-family: 'Courier Prime', monospace;
-            font-size: 1.1em;
-            font-weight: bold;
+            font-size: 1.05em;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             margin: 1.5em auto;
             display: block;
@@ -347,24 +350,95 @@
         @media (max-width: 768px) {
             .container {
                 width: 95%;
-                padding: 1em;
+                padding: 1.2em;
             }
             
             .philosophical-title {
-                font-size: 1.2em;
+                font-size: 1.15em;
+                line-height: 1.6;
+                letter-spacing: 0.02em;
             }
             
             .poem-content {
-                font-size: 1em;
+                font-size: 0.95em;
+                line-height: 1.6;
+                letter-spacing: 0.01em;
+            }
+            
+            .poem-title {
+                font-size: 1.3em;
             }
             
             .password-container {
-                gap: 1em;
+                gap: 1.2em;
             }
             
             .password-display-area {
                 flex-direction: column;
-                gap: 0.5em;
+                gap: 0.8em;
+            }
+            
+            .password-input {
+                width: 140px;
+                font-size: 1em;
+                padding: 0.9em 1em;
+            }
+            
+            .keypad {
+                max-width: 220px;
+                gap: 0.7em;
+            }
+            
+            .keypad-btn {
+                padding: 0.9em;
+                font-size: 1.1em;
+                min-height: 48px;
+                font-weight: 600;
+            }
+            
+            .access-button {
+                font-size: 1em;
+                padding: 0.9em 1.8em;
+                letter-spacing: 0.06em;
+            }
+            
+            .keypad-controls {
+                flex-direction: column;
+                gap: 0.7em;
+            }
+            
+            .classification-banner {
+                font-size: 1.1em;
+                padding: 0.6em;
+            }
+            
+            .access-title {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1em;
+            }
+            
+            .philosophical-title {
+                font-size: 1.1em;
+                line-height: 1.5;
+            }
+            
+            .poem-content {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+            
+            .poem-title {
+                font-size: 1.2em;
+            }
+            
+            .password-input {
+                width: 120px;
+                font-size: 0.95em;
             }
             
             .keypad {
@@ -374,13 +448,13 @@
             
             .keypad-btn {
                 padding: 0.8em;
-                font-size: 1.1em;
-                min-height: 45px;
+                font-size: 1.05em;
+                min-height: 44px;
             }
             
-            .keypad-controls {
-                flex-direction: column;
-                gap: 0.6em;
+            .access-button {
+                font-size: 0.95em;
+                padding: 0.8em 1.5em;
             }
         }
     </style>
@@ -393,10 +467,10 @@
         
         <div class="title-section">
             <div class="philosophical-title">
-                那些故作深沉的人，将故事埋藏于地底深处，不知所谓；<br>
-                这世界充满欺骗与虚无，何为我们真正的价值？<br>
+                那些故作深沉的人，将故事埋藏于地底，不知所谓!<br>
+                世界充满欺骗与虚无，何为自我真正的价值？<br>
                 或许答案始于足下，虽不知前途在何方，<br>
-                亦需纵深前往，探寻那隐藏的真相……
+                亦需纵深前往，举起手斧向荒诞劈去……
             </div>
         
         <div class="poem-section">
