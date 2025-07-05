@@ -490,7 +490,7 @@ spem longam reseces. dum loquimur, fugerit invida
 aetas:</em> <span class="poem-highlight">carpe diem, quam minimum credula postero</span><em style="color: #00bfff;">.</em>
             </div>
             <div class="poem-source">
-                ——《颂歌集》<span style="color: #ff4444; font-weight: bold; text-shadow: 0 0 10px rgba(255, 68, 68, 0.6);">第01卷第11首</span>
+                ——《颂歌集》第一卷第十一首</span>
             </div>
         </div>
         
@@ -533,11 +533,35 @@ aetas:</em> <span class="poem-highlight">carpe diem, quam minimum credula poster
     </div>
     
     <div class="footer-info">
-        项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新: 2025.07.05
+        项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新:今日
     </div>
     
     <script>
         let currentPassword = '';
+        let todayPassword = '';
+        
+        // 获取今日密码
+        function getTodayPassword() {
+            const today = new Date();
+            const month = (today.getMonth() + 1).toString().padStart(2, '0');
+            const day = today.getDate().toString().padStart(2, '0');
+            return month + day;
+        }
+        
+        // 更新密码提示
+        function updatePasswordHint() {
+            const today = new Date();
+            const month = (today.getMonth() + 1).toString().padStart(2, '0');
+            const day = today.getDate().toString().padStart(2, '0');
+            
+            
+            // 更新今日密码
+            todayPassword = getTodayPassword();
+            
+            // 更新页面标题显示今日密码提示
+            const footerInfo = document.querySelector('.footer-info');
+            footerInfo.innerHTML = `项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新: ${month}月${day}日`;
+        }
         
         // 输入数字
         function inputDigit(digit) {
@@ -591,7 +615,7 @@ aetas:</em> <span class="poem-highlight">carpe diem, quam minimum credula poster
         function checkPassword() {
             const errorMsg = document.getElementById('errorMessage');
             
-            if (currentPassword === '0111') {
+            if (currentPassword === todayPassword) {
                 // 密码正确，添加访问成功效果
                 const input = document.getElementById('passwordInput');
                 input.style.borderColor = '#00ff00';
@@ -644,6 +668,7 @@ aetas:</em> <span class="poem-highlight">carpe diem, quam minimum credula poster
             document.body.style.transition = 'opacity 1.5s ease';
             setTimeout(() => {
                 document.body.style.opacity = '1';
+                updatePasswordHint(); // 初始化密码提示
                 updatePasswordDisplay(); // 初始化密码显示
             }, 100);
         });
