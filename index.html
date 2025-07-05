@@ -533,7 +533,7 @@ aetas:</em> <a href="https://zh.wikipedia.org/wiki/%E6%8E%A1%E6%93%B7%E4%BB%8A%E
     </div>
     
     <div class="footer-info">
-        项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新:今日
+        项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新: 加载中...
     </div>
     
     <script>
@@ -554,13 +554,16 @@ aetas:</em> <a href="https://zh.wikipedia.org/wiki/%E6%8E%A1%E6%93%B7%E4%BB%8A%E
             const month = (today.getMonth() + 1).toString().padStart(2, '0');
             const day = today.getDate().toString().padStart(2, '0');
             
+            const year = today.getFullYear();
+            const monthText = today.getMonth() + 1; // 不补零的月份
+            const dayText = today.getDate(); // 不补零的日期
             
             // 更新今日密码
             todayPassword = getTodayPassword();
             
             // 更新页面标题显示今日密码提示
             const footerInfo = document.querySelector('.footer-info');
-            footerInfo.innerHTML = `项目代号: CARPE_DIEM | 分类等级: 限制级 | 最后更新: ${month}月${day}日`;
+            footerInfo.innerHTML = `项目代号: CARPE_DIEM | 分类等级: V级 | 最后更新: ${year}年${monthText}月${dayText}日`;
         }
         
         // 输入数字
